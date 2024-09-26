@@ -1,0 +1,463 @@
+{
+    "body": [
+        {
+            "async": false,
+            "body": {
+                "directives": [],
+                "end": 88,
+                "start": 69,
+                "statements": [
+                    {
+                        "argument": {
+                            "end": 85,
+                            "left": {
+                                "end": 81,
+                                "name": "a",
+                                "start": 80,
+                                "type": "Identifier"
+                            },
+                            "operator": "+",
+                            "right": {
+                                "end": 85,
+                                "name": "b",
+                                "start": 84,
+                                "type": "Identifier"
+                            },
+                            "start": 80,
+                            "type": "BinaryExpression"
+                        },
+                        "end": 86,
+                        "start": 73,
+                        "type": "ReturnStatement"
+                    }
+                ],
+                "type": "FunctionBody"
+            },
+            "declare": false,
+            "end": 88,
+            "generator": false,
+            "id": {
+                "end": 38,
+                "name": "sumarNumeros",
+                "start": 26,
+                "type": "Identifier"
+            },
+            "params": {
+                "end": 60,
+                "items": [
+                    {
+                        "accessibility": null,
+                        "decorators": [],
+                        "end": 48,
+                        "override": false,
+                        "pattern": {
+                            "end": 48,
+                            "name": "a",
+                            "optional": false,
+                            "start": 39,
+                            "type": "Identifier",
+                            "typeAnnotation": {
+                                "end": 48,
+                                "start": 40,
+                                "type": "TSTypeAnnotation",
+                                "typeAnnotation": {
+                                    "end": 48,
+                                    "start": 42,
+                                    "type": "TSNumberKeyword"
+                                }
+                            }
+                        },
+                        "readonly": false,
+                        "start": 39,
+                        "type": "FormalParameter"
+                    },
+                    {
+                        "accessibility": null,
+                        "decorators": [],
+                        "end": 59,
+                        "override": false,
+                        "pattern": {
+                            "end": 59,
+                            "name": "b",
+                            "optional": false,
+                            "start": 50,
+                            "type": "Identifier",
+                            "typeAnnotation": {
+                                "end": 59,
+                                "start": 51,
+                                "type": "TSTypeAnnotation",
+                                "typeAnnotation": {
+                                    "end": 59,
+                                    "start": 53,
+                                    "type": "TSNumberKeyword"
+                                }
+                            }
+                        },
+                        "readonly": false,
+                        "start": 50,
+                        "type": "FormalParameter"
+                    }
+                ],
+                "kind": "FormalParameter",
+                "start": 38,
+                "type": "FormalParameters"
+            },
+            "returnType": {
+                "end": 68,
+                "start": 60,
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                    "end": 68,
+                    "start": 62,
+                    "type": "TSNumberKeyword"
+                }
+            },
+            "start": 17,
+            "thisParam": null,
+            "type": "FunctionDeclaration",
+            "typeParameters": null
+        },
+        {
+            "declarations": [
+                {
+                    "definite": false,
+                    "end": 125,
+                    "id": {
+                        "end": 103,
+                        "name": "resultado",
+                        "optional": false,
+                        "start": 94,
+                        "type": "Identifier",
+                        "typeAnnotation": null
+                    },
+                    "init": {
+                        "arguments": [
+                            {
+                                "end": 120,
+                                "raw": "5",
+                                "start": 119,
+                                "type": "NumericLiteral",
+                                "value": 5.0
+                            },
+                            {
+                                "end": 124,
+                                "raw": "10",
+                                "start": 122,
+                                "type": "NumericLiteral",
+                                "value": 10.0
+                            }
+                        ],
+                        "callee": {
+                            "end": 118,
+                            "name": "sumarNumeros",
+                            "start": 106,
+                            "type": "Identifier"
+                        },
+                        "end": 125,
+                        "optional": false,
+                        "start": 106,
+                        "type": "CallExpression",
+                        "typeParameters": null
+                    },
+                    "start": 94,
+                    "type": "VariableDeclarator"
+                }
+            ],
+            "declare": false,
+            "end": 126,
+            "kind": "let",
+            "start": 90,
+            "type": "VariableDeclaration"
+        },
+        {
+            "end": 173,
+            "expression": {
+                "arguments": [
+                    {
+                        "end": 171,
+                        "left": {
+                            "end": 159,
+                            "start": 140,
+                            "type": "StringLiteral",
+                            "value": "El resultado es: "
+                        },
+                        "operator": "+",
+                        "right": {
+                            "end": 171,
+                            "name": "resultado",
+                            "start": 162,
+                            "type": "Identifier"
+                        },
+                        "start": 140,
+                        "type": "BinaryExpression"
+                    }
+                ],
+                "callee": {
+                    "end": 139,
+                    "object": {
+                        "end": 135,
+                        "name": "console",
+                        "start": 128,
+                        "type": "Identifier"
+                    },
+                    "optional": false,
+                    "property": {
+                        "end": 139,
+                        "name": "log",
+                        "start": 136,
+                        "type": "Identifier"
+                    },
+                    "start": 128,
+                    "type": "StaticMemberExpression"
+                },
+                "end": 172,
+                "optional": false,
+                "start": 128,
+                "type": "CallExpression",
+                "typeParameters": null
+            },
+            "start": 128,
+            "type": "ExpressionStatement"
+        },
+        {
+            "body": {
+                "body": [
+                    {
+                        "end": 213,
+                        "expression": {
+                            "argument": {
+                                "end": 210,
+                                "name": "resultado",
+                                "start": 201,
+                                "type": "Identifier"
+                            },
+                            "end": 212,
+                            "operator": "--",
+                            "prefix": false,
+                            "start": 201,
+                            "type": "UpdateExpression"
+                        },
+                        "start": 201,
+                        "type": "ExpressionStatement"
+                    }
+                ],
+                "end": 215,
+                "start": 197,
+                "type": "BlockStatement"
+            },
+            "end": 215,
+            "start": 174,
+            "test": {
+                "end": 195,
+                "left": {
+                    "end": 190,
+                    "name": "resultado",
+                    "start": 181,
+                    "type": "Identifier"
+                },
+                "operator": "!=",
+                "right": {
+                    "end": 195,
+                    "raw": "0",
+                    "start": 194,
+                    "type": "NumericLiteral",
+                    "value": 0.0
+                },
+                "start": 181,
+                "type": "BinaryExpression"
+            },
+            "type": "WhileStatement"
+        },
+        {
+            "declarations": [
+                {
+                    "definite": false,
+                    "end": 317,
+                    "id": {
+                        "end": 226,
+                        "name": "objeto",
+                        "optional": false,
+                        "start": 220,
+                        "type": "Identifier",
+                        "typeAnnotation": null
+                    },
+                    "init": {
+                        "end": 317,
+                        "properties": [
+                            {
+                                "computed": false,
+                                "end": 247,
+                                "init": null,
+                                "key": {
+                                    "end": 239,
+                                    "name": "nombre",
+                                    "start": 233,
+                                    "type": "Identifier"
+                                },
+                                "kind": "init",
+                                "method": false,
+                                "shorthand": false,
+                                "start": 233,
+                                "type": "ObjectProperty",
+                                "value": {
+                                    "end": 247,
+                                    "start": 241,
+                                    "type": "StringLiteral",
+                                    "value": "Juan"
+                                }
+                            },
+                            {
+                                "computed": false,
+                                "end": 259,
+                                "init": null,
+                                "key": {
+                                    "end": 255,
+                                    "name": "edad",
+                                    "start": 251,
+                                    "type": "Identifier"
+                                },
+                                "kind": "init",
+                                "method": false,
+                                "shorthand": false,
+                                "start": 251,
+                                "type": "ObjectProperty",
+                                "value": {
+                                    "end": 259,
+                                    "raw": "30",
+                                    "start": 257,
+                                    "type": "NumericLiteral",
+                                    "value": 30.0
+                                }
+                            }
+                        ],
+                        "start": 229,
+                        "type": "ObjectExpression"
+                    },
+                    "start": 220,
+                    "type": "VariableDeclarator"
+                }
+            ],
+            "declare": false,
+            "end": 318,
+            "kind": "let",
+            "start": 216,
+            "type": "VariableDeclaration"
+        },
+        {
+            "alternate": null,
+            "consequent": {
+                "body": [
+                    {
+                        "end": 395,
+                        "expression": {
+                            "arguments": [
+                                {
+                                    "end": 393,
+                                    "left": {
+                                        "end": 371,
+                                        "object": {
+                                            "end": 364,
+                                            "name": "objeto",
+                                            "start": 358,
+                                            "type": "Identifier"
+                                        },
+                                        "optional": false,
+                                        "property": {
+                                            "end": 371,
+                                            "name": "nombre",
+                                            "start": 365,
+                                            "type": "Identifier"
+                                        },
+                                        "start": 358,
+                                        "type": "StaticMemberExpression"
+                                    },
+                                    "operator": "+",
+                                    "right": {
+                                        "end": 393,
+                                        "start": 374,
+                                        "type": "StringLiteral",
+                                        "value": " es mayor de edad"
+                                    },
+                                    "start": 358,
+                                    "type": "BinaryExpression"
+                                }
+                            ],
+                            "callee": {
+                                "end": 357,
+                                "object": {
+                                    "end": 353,
+                                    "name": "console",
+                                    "start": 346,
+                                    "type": "Identifier"
+                                },
+                                "optional": false,
+                                "property": {
+                                    "end": 357,
+                                    "name": "log",
+                                    "start": 354,
+                                    "type": "Identifier"
+                                },
+                                "start": 346,
+                                "type": "StaticMemberExpression"
+                            },
+                            "end": 394,
+                            "optional": false,
+                            "start": 346,
+                            "type": "CallExpression",
+                            "typeParameters": null
+                        },
+                        "start": 346,
+                        "type": "ExpressionStatement"
+                    }
+                ],
+                "end": 397,
+                "start": 342,
+                "type": "BlockStatement"
+            },
+            "end": 397,
+            "start": 320,
+            "test": {
+                "end": 340,
+                "left": {
+                    "end": 335,
+                    "object": {
+                        "end": 330,
+                        "name": "objeto",
+                        "start": 324,
+                        "type": "Identifier"
+                    },
+                    "optional": false,
+                    "property": {
+                        "end": 335,
+                        "name": "edad",
+                        "start": 331,
+                        "type": "Identifier"
+                    },
+                    "start": 324,
+                    "type": "StaticMemberExpression"
+                },
+                "operator": ">",
+                "right": {
+                    "end": 340,
+                    "raw": "18",
+                    "start": 338,
+                    "type": "NumericLiteral",
+                    "value": 18.0
+                },
+                "start": 324,
+                "type": "BinaryExpression"
+            },
+            "type": "IfStatement"
+        }
+    ],
+    "directives": [],
+    "end": 398,
+    "hashbang": null,
+    "sourceType": {
+        "language": "typescript",
+        "moduleKind": "module",
+        "variant": "standard"
+    },
+    "start": 0,
+    "type": "Program"
+}

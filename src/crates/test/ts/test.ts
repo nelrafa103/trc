@@ -3,7 +3,7 @@ function sumarNumeros(a: number, b: number): number {
   return a + b;
 }
 
-let resultado = sumarNumeros(5, "10");
+let resultado = sumarNumeros(5, 10);
 
 console.log("El resultado es: " + resultado);
 while (resultado != 0) {

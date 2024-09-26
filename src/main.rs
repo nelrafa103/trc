@@ -26,7 +26,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     //  let num_threads = 4;
     //let counter = Arc::new(Mutex::new(0));
 
-    let path = "src/crates/test/ts/test.js".to_string();
+    let path = "src/crates/test/ts/test.ts".to_string();
     /*let y = linter(path.clone());
     if y.is_err() {
         println!("{}", y.unwrap_err().to_string());
@@ -51,8 +51,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let mut prueba: HashMap<String, i16> = count_value_occurrences(&resultados);
     let mut counter: Duration = Duration::new(0, 0);
+    search_json::parallel_search_keys(&json, &claves_de_interes, 10);
+    println!("{}",json);
     for (ruta, valor) in resultados {
-        //println!("AST tree values: {}", valor);
+        println!("route: {}, value: {}", ruta,valor);
 
         let processed = process(valor);
         let start = Instant::now();
