@@ -52,6 +52,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut prueba: HashMap<String, i16> = count_value_occurrences(&resultados);
     let mut counter: Duration = Duration::new(0, 0);
     search_json::parallel_search_keys(&json, &claves_de_interes, 10);
+  //  let duracion = start.elapsed();
+    //println!("Tiempo de ejecución: {:?}", duracion);
+
     println!("{}",json);
     for (ruta, valor) in resultados {
         println!("route: {}, value: {}", ruta,valor);
