@@ -1,7 +1,21 @@
 use serde_json::Value;
 use std::collections::HashMap;
+
 use std::sync::{Arc, Mutex};
 use std::thread;
+
+///! It finds the amount of occurence of keys in a hashmap 
+/// and returns the amount in hashmap <String, i16>
+fn count_value_occurrences(input: &HashMap<String, String>) -> HashMap<String, i16> {
+    let mut count: HashMap<String, i16> = HashMap::new();
+
+    for value in input.values() {
+        *count.entry(value.clone()).or_insert(0) += 1;
+    }
+
+    count
+}
+
 
 ///! It searches for the keys in the JSON object and returns a HashMap with the keys and values.
 /// it is a recursive function that searches for the keys in the JSON object and returns a HashMap with the keys and values.
@@ -10,7 +24,7 @@ use std::thread;
 ///! * `searched_keys` - The keys to search.
 ///! * `route` - The route to the current object.
 ///! * `result` - The HashMap with the keys and values.
-pub fn search_keys(
+fn search_keys(
     value: &Value,
     searched_keys: &[String],
     route: String,
@@ -44,54 +58,35 @@ pub fn search_keys(
 pub fn parallel_search_keys(
     value: &Value,
     searched_keys: &[String],
-    group_size: usize,
+    num_threads: usize,
 ) -> HashMap<String, String> {
     let value = Arc::new(value.clone());
-    let result = Arc::new(Mutex::new(HashMap::new()));
+    let searched_keys = Arc::new(searched_keys.to_vec());
     let mut handles = vec![];
 
-    for chunk in searched_keys.chunks(group_size) {
+    for i in 0..num_threads {
         let value = Arc::clone(&value);
-        let result = Arc::clone(&result);
-        let chunk = chunk.to_vec();
+        let searched_keys = Arc::clone(&searched_keys);
 
         let handle = thread::spawn(move || {
             let mut local_result = HashMap::new();
-            search_keys(&value, &chunk, String::new(), &mut local_result);
-            let mut global_result = result.lock().unwrap();
-            global_result.extend(local_result);
+            let chunk_size = (searched_keys.len() + num_threads - 1) / num_threads;
+            let start = i * chunk_size;
+            let end = (start + chunk_size).min(searched_keys.len());
+
+            search_keys(&value, &searched_keys[start..end], String::new(), &mut local_result);
+            local_result
         });
 
         handles.push(handle);
     }
 
+    let mut final_result = HashMap::new();
     for handle in handles {
-        handle.join().unwrap();
+        final_result.extend(handle.join().unwrap());
     }
 
-    Arc::try_unwrap(result).unwrap().into_inner().unwrap()
+    final_result
 }
 
-/*fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Leer el archivo JSON
-    let contenido = fs::read_to_string("datos.json")?;
-    let json: Value = serde_json::from_str(&contenido)?;
 
-    // keys que te interesan
-    let keys_de_interes = vec![
-        "nombre".to_string(),
-        "edad".to_string(),
-        "email".to_string()
-    ];
-
-    let mut result = HashMap::new();
-    search_keys(&json, &keys_de_interes, String::new(), &mut result);
-
-    // Imprimir los result
-    for (route, value) in result {
-        println!("{}: {}", route, value);
-    }
-
-    Ok(())
-}
-*/

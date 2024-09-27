@@ -4,6 +4,11 @@ use std::collections::HashMap;
 
 use std::fs;
 use std::time::Instant;
+
+///! This function calculate the amount of time require to transpile the code to typescript
+/// the taste will be determinated by the amount of time taken to transpile the code. The time 
+/// will be measured in miliseconds. It's logical than more the file size more the time will take.
+/// 
 #[test]
 fn search_json_test() {
     let start = Instant::now();
@@ -12,7 +17,7 @@ fn search_json_test() {
     let json: Value = serde_json::from_str(&json_string).unwrap();
     let claves_de_interes = vec!["type".to_string(), "kind".to_string(), "email".to_string()];
     let mut resultados = HashMap::new();
-    search_json::search_keys(&json, &claves_de_interes, String::new(), &mut resultados);
+    resultados = search_json::parallel_search_keys(&json, &claves_de_interes, 2 );
 
     let duration = start.elapsed();
 
